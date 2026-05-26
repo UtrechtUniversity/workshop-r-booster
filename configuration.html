@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Research Data Management Support Utrecht University">
-<meta name="dcterms.date" content="2026-05-26">
 
-<title>R Booster</title>
+<title>Configuration – R Booster</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -35,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./setup-and-environment.html" rel="next">
+<link href="./api.html" rel="next">
+<link href="./package-management.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -86,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./configuration.html">Configuration</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -116,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -140,7 +139,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./configuration.html" class="sidebar-item-text sidebar-link">
+  <a href="./configuration.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Configuration</span></a>
   </div>
 </li>
@@ -190,35 +189,25 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
+  <li><a href="#configuration-files" id="toc-configuration-files" class="nav-link active" data-scroll-target="#configuration-files">Configuration Files</a></li>
+  <li><a href="#working-with-smallermodular-files" id="toc-working-with-smallermodular-files" class="nav-link" data-scroll-target="#working-with-smallermodular-files">Working with Smaller/Modular Files</a></li>
+  <li><a href="#working-with-multiple-files" id="toc-working-with-multiple-files" class="nav-link" data-scroll-target="#working-with-multiple-files">Working With Multiple Files</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/UtrechtUniversity/workshop-r-booster/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/UtrechtUniversity/workshop-r-booster/edit/main/configuration.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">R Booster</h1>
+<h1 class="title">Configuration</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Research Data Management Support<br>Utrecht University </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">May 26, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -228,10 +217,17 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>This is a Quarto book on R.</p>
-<p>To learn more about Quarto books visit <a href="https://quarto.org/docs/books" class="uri">https://quarto.org/docs/books</a>.</p>
+<section id="configuration-files" class="level2">
+<h2 class="anchored" data-anchor-id="configuration-files">Configuration Files</h2>
+<p>Set up configuration files to carry out certain operations like dropping columns, renaming columns, recoding values - as opposed to hard-coding things in the script.</p>
+</section>
+<section id="working-with-smallermodular-files" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-smallermodular-files">Working with Smaller/Modular Files</h2>
+<p>The brainstorm document also has mentioning this concept about modularity here, but don’t know if it fits.</p>
+</section>
+<section id="working-with-multiple-files" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-multiple-files">Working With Multiple Files</h2>
+<p>importing <em>single vs.&nbsp;multiple files (lists)</em> is mentioned in this section of our brainstorm document, but don’t know if it belongs here or elsewhere.</p>
 
 
 </section>
@@ -639,10 +635,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./package-management.html" class="pagination-link" aria-label="Package Management">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Package Management</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./setup-and-environment.html" class="pagination-link" aria-label="Project Setup &amp; Environment">
-        <span class="nav-page-text">Project Setup &amp; Environment</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./api.html" class="pagination-link" aria-label="Working with APIs">
+        <span class="nav-page-text">Working with APIs</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -651,4 +650,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UtrechtUniversity/workshop-r-booster/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UtrechtUniversity/workshop-r-booster/edit/main/configuration.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
