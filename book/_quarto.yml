@@ -1,25 +1,25 @@
 project:
   type: book
+  output-dir: _book
 
 book:
   title: "R Booster"
-  author: "Norah Jones"
-  date: "26-5-2026"
+  author: "Research Data Management Support<br>Utrecht University"
+  date: last-modified
+  search: true
   chapters:
     - index.qmd
     - intro.qmd
     - summary.qmd
     - references.qmd
 
+  repo-url: https://github.com/UtrechtUniversity/workshop-r-booster
+  repo-actions: [edit]
+
 bibliography: references.bib
 
 format:
   html:
-    theme:
-      - cosmo
-      - brand
-  pdf:
-    documentclass: scrreprt
+    theme: cosmo
 
-
-
+callout-appearance: simple
