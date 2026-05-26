@@ -1,0 +1,6 @@
+# Documentation {.unnumbered}
+
+1. Create a codebook using the codebook package
+2. Use a README template, add session_info() to the README and maybe automate it being updated.
+3. CITATION.cff
+4. CHANGELOG (optional) and/or data cleaning checklist or plan (optional)

@@ -1,0 +1,6 @@
+# Help {.unnumbered}
+
+- How to use ?function to search for the function documentation
+- See the "Teach Me How To Google" presentation for tips on searching for errors and issues
+- how to create reproducicble examples..reprexes
+- LLM assistance: do not paste your data into the LLM chatbots! use reprexes instead. Many tidyverse packages now have an LLM helper trained on the (pacakge documentation) on their websites. Use Mistral or Lumo (EU-based, privacy-focus), EduGenAI is also coming up. Try to use the Study Mode option so you don't get the answers immediately to copy and paste, but ask it to help figure things out. 

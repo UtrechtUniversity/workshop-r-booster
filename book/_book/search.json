@@ -1,0 +1,142 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "R Booster",
+    "section": "",
+    "text": "Preface\nThis is a Quarto book on R.\nTo learn more about Quarto books visit https://quarto.org/docs/books.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "reproducibility.html",
+    "href": "reproducibility.html",
+    "title": "Reproducibility",
+    "section": "",
+    "text": "Working with renv to improve reproducibility. This needs to happen before any packages are installed, otherwise participants don’t get to explore the empty-ish lock.file.\nSee:https://lennartwittkuhn.com/repro-book/chapters/renv.html",
+    "crumbs": [
+      "Reproducibility"
+    ]
+  },
+  {
+    "objectID": "package-management.html",
+    "href": "package-management.html",
+    "title": "Package Management",
+    "section": "",
+    "text": "Functions to:\n\ninstall packages\nload packages\nunload packages\nupdate packages\ndelete packages\n\nUse the annotater to annotate package load calls with version numbers, description, functions used.\nUse session_info() to see what’s loaded, as well as other information* (should session_info come elsewhere? documentation maybe?)",
+    "crumbs": [
+      "Package Management"
+    ]
+  },
+  {
+    "objectID": "setup-and-environment.html",
+    "href": "setup-and-environment.html",
+    "title": "Project Setup & Environment",
+    "section": "",
+    "text": "Environment alternative subsection title: “Blank Slates”\nalternative chapter names: “Getting Started”, “Setup”\nWhen you quit R, do not save the workspace to an .Rdata file. When you launch, do not reload the workspace from an .Rdata file. This ensures a blank slate everytime you start a new R session.\nIn RStudio, you can set this via Tools &gt; Global Options.",
+    "crumbs": [
+      "Project Setup & Environment"
+    ]
+  },
+  {
+    "objectID": "setup-and-environment.html#rstudio-projects",
+    "href": "setup-and-environment.html#rstudio-projects",
+    "title": "Project Setup & Environment",
+    "section": "RStudio Projects",
+    "text": "RStudio Projects\n\nCreating Projects\nOpening Projects",
+    "crumbs": [
+      "Project Setup & Environment"
+    ]
+  },
+  {
+    "objectID": "setup-and-environment.html#paths",
+    "href": "setup-and-environment.html#paths",
+    "title": "Project Setup & Environment",
+    "section": "Paths",
+    "text": "Paths\nWe don’t want setwd(\"path/that/only/works/on/my/machine\")\nRStudio projects automatically sets the working directory for us.\n\nExplain Absolute Paths\nExplain Relative Paths",
+    "crumbs": [
+      "Project Setup & Environment"
+    ]
+  },
+  {
+    "objectID": "configuration.html",
+    "href": "configuration.html",
+    "title": "Configuration",
+    "section": "",
+    "text": "Configuration Files\nSet up configuration files to carry out certain operations like dropping columns, renaming columns, recoding values - as opposed to hard-coding things in the script.",
+    "crumbs": [
+      "Configuration"
+    ]
+  },
+  {
+    "objectID": "configuration.html#working-with-multiple-files",
+    "href": "configuration.html#working-with-multiple-files",
+    "title": "Configuration",
+    "section": "Working With Multiple Files",
+    "text": "Working With Multiple Files\nimporting single vs. multiple files (lists) is mentioned in this section of our brainstorm document, but don’t know if it belongs here or elsewhere.",
+    "crumbs": [
+      "Configuration"
+    ]
+  },
+  {
+    "objectID": "api.html",
+    "href": "api.html",
+    "title": "Working with APIs",
+    "section": "",
+    "text": "Use the DataverseNL API to fetch data for this workshop.",
+    "crumbs": [
+      "Working with APIs"
+    ]
+  },
+  {
+    "objectID": "data-cleaning.html",
+    "href": "data-cleaning.html",
+    "title": "Data Pipeline",
+    "section": "",
+    "text": "Explore Data\nValidate Data\nDrop Columns\nSplit and/or Merge Columns\nRename Columns\nAdjust Variable Types\nFilter outliers and/or missing data\nDe-identify data\nStandardize values (dates, country, units)\nRecoding\nConstruct new variables\n\nFrom our brainstorm notes:\n\nRename Columns\nAdjust number of cases\nDe-identify data\nDrop any irrelevant columns\nSplit columns as needed\nRename variables\nTransform/normalize variables\nStandardize variables\nUpdate any variable types as needed\nRecode variables\nConstruct any necessary variables\nAdd missing values as needed\nAdd metadata as needed\nValidate data\nMerge and/or append data as needed\nTransform data as needed",
+    "crumbs": [
+      "Data Pipeline"
+    ]
+  },
+  {
+    "objectID": "documentation.html",
+    "href": "documentation.html",
+    "title": "Documentation",
+    "section": "",
+    "text": "Create a codebook using the codebook package\nUse a README template, add session_info() to the README and maybe automate it being updated.\nCITATION.cff\nCHANGELOG (optional) and/or data cleaning checklist or plan (optional)",
+    "crumbs": [
+      "Documentation"
+    ]
+  },
+  {
+    "objectID": "automation.html",
+    "href": "automation.html",
+    "title": "Automation",
+    "section": "",
+    "text": "Demonstrate how you could automate scripts - use a controller script or batch file / shell script. - schedule the scripts to run at a specific time or interval - say something about SNAKEMAKE? Or the targets package? Might be overkill..",
+    "crumbs": [
+      "Automation"
+    ]
+  },
+  {
+    "objectID": "help.html",
+    "href": "help.html",
+    "title": "Help",
+    "section": "",
+    "text": "How to use ?function to search for the function documentation\nSee the “Teach Me How To Google” presentation for tips on searching for errors and issues\nhow to create reproducicble examples..reprexes\nLLM assistance: do not paste your data into the LLM chatbots! use reprexes instead. Many tidyverse packages now have an LLM helper trained on the (pacakge documentation) on their websites. Use Mistral or Lumo (EU-based, privacy-focus), EduGenAI is also coming up. Try to use the Study Mode option so you don’t get the answers immediately to copy and paste, but ask it to help figure things out.",
+    "crumbs": [
+      "Help"
+    ]
+  },
+  {
+    "objectID": "configuration.html#working-with-smallermodular-files",
+    "href": "configuration.html#working-with-smallermodular-files",
+    "title": "Configuration",
+    "section": "Working with Smaller/Modular Files",
+    "text": "Working with Smaller/Modular Files\nThe brainstorm document also has mentioning this concept about modularity here, but don’t know if it fits.",
+    "crumbs": [
+      "Configuration"
+    ]
+  }
+]

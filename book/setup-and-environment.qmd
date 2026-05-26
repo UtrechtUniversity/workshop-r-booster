@@ -1,0 +1,26 @@
+# Project Setup & Environment {.unnumbered}
+
+_alternative chapter names: "Getting Started", "Setup"_
+
+## Environment _alternative subsection title: "Blank Slates"_
+
+When you quit R, do not save the workspace to an .Rdata file. When you launch, do not reload the workspace from an .Rdata file. This ensures a blank slate everytime you start a new R session.
+
+In RStudio, you can set this via Tools > Global Options.
+
+## RStudio Projects
+
+1. Creating Projects
+2. Opening Projects
+
+## Paths
+
+We don't want `setwd("path/that/only/works/on/my/machine")`
+
+RStudio projects automatically sets the working directory for us.
+
+- Explain _Absolute Paths_
+- Explain _Relative Paths_
+
+
+

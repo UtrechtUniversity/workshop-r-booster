@@ -1,0 +1,13 @@
+# Configuration {.unnumbered}
+
+## Configuration Files
+
+Set up configuration files to carry out certain operations like dropping columns, renaming columns, recoding values - as opposed to hard-coding things in the script.
+
+## Working with Smaller/Modular Files
+
+The brainstorm document also has mentioning this concept about modularity here, but don't know if it fits.
+
+## Working With Multiple Files
+
+importing _single vs. multiple files (lists)_ is mentioned in this section of our brainstorm document, but don't know if it belongs here or elsewhere.

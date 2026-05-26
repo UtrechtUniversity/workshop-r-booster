@@ -1,0 +1,7 @@
+# Automation {.unnumbered}
+
+Demonstrate how you could automate scripts
+- use a controller script or batch file / shell script.
+- schedule the scripts to run at a specific time or interval
+- say something about SNAKEMAKE? Or the targets package? Might be overkill..
+

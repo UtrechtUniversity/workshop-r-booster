@@ -1,0 +1,5 @@
+# Reproducibility {.unnumbered}
+
+Working with `renv` to improve reproducibility. This needs to happen before any packages are installed, otherwise participants don't get to explore the empty-ish lock.file.
+
+See:https://lennartwittkuhn.com/repro-book/chapters/renv.html

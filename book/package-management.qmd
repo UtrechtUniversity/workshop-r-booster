@@ -1,0 +1,15 @@
+# Package Management {.unnumbered}
+
+Functions to:
+
+1. install packages 
+2. load packages
+3. unload packages
+3. update packages
+4. delete packages
+
+Use the [`annotater`](https://annotater.liomys.mx/) to annotate package load calls with version numbers, description, functions used.
+
+Use `session_info()` to see what's loaded, as well as other information* (should session_info come elsewhere? documentation maybe?)
+
+

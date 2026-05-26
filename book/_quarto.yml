@@ -9,8 +9,15 @@ book:
   search: true
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
+    - setup-and-environment.qmd
+    - reproducibility.qmd
+    - package-management.qmd
+    - configuration.qmd
+    - api.qmd
+    - data-cleaning.qmd
+    - automation.qmd
+    - documentation.qmd
+    - help.qmd
     - references.qmd
 
   repo-url: https://github.com/UtrechtUniversity/workshop-r-booster

@@ -1,0 +1,32 @@
+# Data Pipeline {.unnumbered}
+
+- Explore Data
+- Validate Data
+- Drop Columns
+- Split and/or Merge Columns
+- Rename Columns
+- Adjust Variable Types
+- Filter outliers and/or missing data
+- De-identify data
+- Standardize values (dates, country, units)
+- Recoding
+- Construct new variables
+
+From our brainstorm notes:
+
+- Rename Columns
+- Adjust number of cases
+- De-identify data
+- Drop any irrelevant columns
+- Split columns as needed
+- Rename variables
+- Transform/normalize variables
+- Standardize variables
+- Update any variable types as needed
+- Recode variables
+- Construct any necessary variables
+- Add missing values as needed
+- Add metadata as needed
+- Validate data
+- Merge and/or append data as needed
+- Transform data as needed
