@@ -14,7 +14,17 @@
     "href": "setup-and-environment.html",
     "title": "Project Setup & Environment",
     "section": "",
-    "text": "Environment alternative subsection title: “Blank Slates”\nalternative chapter names: “Getting Started”, “Setup”\nWhen you quit R, do not save the workspace to an .Rdata file. When you launch, do not reload the workspace from an .Rdata file. This ensures a blank slate everytime you start a new R session.\nIn RStudio, you can set this via Tools &gt; Global Options.",
+    "text": "Environment\nReference: https://rstats.wtf/source-and-blank-slates\nWhen you quit R, do not save the workspace to an .Rdata file. When you launch R, do not reload the workspace from an .Rdata file. This is an absolute requirement for reproducibility, you have to save the source (files) needed to create all important artefacts of your analyis.\nIn RStudio, you can set this via Tools &gt; Global Options.",
+    "crumbs": [
+      "Project Setup & Environment"
+    ]
+  },
+  {
+    "objectID": "setup-and-environment.html#environment",
+    "href": "setup-and-environment.html#environment",
+    "title": "Project Setup & Environment",
+    "section": "",
+    "text": "Uncheck Restore .RData into workspace at startup\nToggle Save workspace to .RData on exit: to Never",
     "crumbs": [
       "Project Setup & Environment"
     ]
@@ -24,7 +34,7 @@
     "href": "setup-and-environment.html#rstudio-projects",
     "title": "Project Setup & Environment",
     "section": "RStudio Projects",
-    "text": "RStudio Projects\n\nCreating Projects\nOpening Projects",
+    "text": "RStudio Projects\nReference: https://rstats.wtf/projects\nWe recommend organizing your projects into self-contained folders.\nHowever, we don’t want setwd(\"path/that/only/works/on/my/machine\") in our scripts. This will only work for the author of the script, working on that specific computer.\nInstead, you can use RStudio Projects which will automatically set the working directory everytime you launch R using the .Rproj file.\n\nCreating Projects\nOpening Projects",
     "crumbs": [
       "Project Setup & Environment"
     ]
@@ -34,7 +44,7 @@
     "href": "setup-and-environment.html#paths",
     "title": "Project Setup & Environment",
     "section": "Paths",
-    "text": "Paths\nWe don’t want setwd(\"path/that/only/works/on/my/machine\")\nRStudio projects automatically sets the working directory for us.\n\nExplain Absolute Paths\nExplain Relative Paths",
+    "text": "Paths\nReferences: https://rstats.wtf/practice-safe-paths, https://malco.io/articles/2018-11-05-why-should-i-use-the-here-package-when-i-m-already-using-projects\n\nExplain Absolute Paths\nExplain Relative Paths\n\nIf you’re using .Rproj files with your projects, then you can use relative paths and you’ll be good to go!\nThere may be some exceptions - for example, if you need your paths to work across operating systems* or if you’re working with R Markdown (.Rmd) or Quarto documents (.qmd) located in subdirectories**. In these situations, use the here package to practice safe paths.\nSimilar to the setwd() problem, we don’t want penguins &lt;- read_csv(\"path/that/only/works/on/my/machine/data/penguins.csv\") in our scripts.\nThe here package would help circumvent this like so: penguins &lt;- read_csv(\"here/data/penguins.csv\")\nIf you’re using RStudio Projects, the here package will detect the .Rproj file and automatically apply the same the working directory. Otherwise, you can set it manually.\n\nthe slashes in files paths can vary between operating systems and cause errors\n\n** R Markdown and Quarto documents assume the working directory to be whichever folder the document itself is located in. If the document is in a subdirectory, relative paths from the root of the project might not work. So the here package provides a fail-safe.\n\nReferences\n\nhttps://rstats.wtf/source-and-blank-slates\nhttps://rstats.wtf/projects\nhttps://rstats.wtf/practice-safe-paths\nhttps://tidyverse.org/blog/2017/12/workflow-vs-script/",
     "crumbs": [
       "Project Setup & Environment"
     ]
@@ -54,7 +64,27 @@
     "href": "package-management.html",
     "title": "Package Management",
     "section": "",
-    "text": "Functions to:\n\ninstall packages\nload packages\nunload packages\nupdate packages\ndelete packages\n\nUse the annotater to annotate package load calls with version numbers, description, functions used.\nUse session_info() to see what’s loaded, as well as other information* (should session_info come elsewhere? documentation maybe?)",
+    "text": "Functions for Package Management\nReferences: https://www.datanovia.com/learn/programming/r-foundations/installing-packages#library-vs-require, https://www.geeksforgeeks.org/r-language/removing-package-in-r/",
+    "crumbs": [
+      "Package Management"
+    ]
+  },
+  {
+    "objectID": "package-management.html#functions-for-package-management",
+    "href": "package-management.html#functions-for-package-management",
+    "title": "Package Management",
+    "section": "",
+    "text": "Install packages: install.pacakges(\"tidyverse\")\nLoad packages: library(tidyverse)\nUnload packages: detach(\"package: tidyverse\", unload = TRUE)\nUpdate packages: update.packages(oldPkgs = \"tidyverse\")\nDelete packages: remove.packages(\"tidyverse) or unlink()",
+    "crumbs": [
+      "Package Management"
+    ]
+  },
+  {
+    "objectID": "package-management.html#document-packages",
+    "href": "package-management.html#document-packages",
+    "title": "Package Management",
+    "section": "Document Packages",
+    "text": "Document Packages\nPackages should be loaded at the top of the script. There are functions to install or load multiple packages at once * , but loading each package individually means if something is wrong with one package, the error message will be more clear. Moreover, loading each package individually allows you to use the annotater package.\nUse the annotater to annotate package load calls with version numbers, description, functions used.\nUse session_info() to see what’s loaded, as well as other information*\n\nReferences\n\nhttps://www.datanovia.com/learn/programming/r-foundations/installing-packages#library-vs-require\nhttps://www.geeksforgeeks.org/r-language/removing-package-in-r/\nwe should provide examples of this",
     "crumbs": [
       "Package Management"
     ]

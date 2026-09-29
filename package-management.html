@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -41,10 +44,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-87b7f55de2e0c9887283481eb31a794c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-fd0503e23dce65854c81c5baaade3bdf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -184,8 +187,18 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#functions-for-package-management" id="toc-functions-for-package-management" class="nav-link active" data-scroll-target="#functions-for-package-management">Functions for Package Management</a></li>
+  <li><a href="#document-packages" id="toc-document-packages" class="nav-link" data-scroll-target="#document-packages">Document Packages</a>
+  <ul class="collapse">
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/UtrechtUniversity/workshop-r-booster/edit/main/package-management.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -209,18 +222,47 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Functions to:</p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>In this chapter, we want to discuss:</p>
+<ul>
+<li>installing &amp; maintaining packages</li>
+<li>documenting packages within scripts</li>
+</ul>
+</div>
+</div>
+</div>
+<p><em>References</em>: https://www.datanovia.com/learn/programming/r-foundations/installing-packages#library-vs-require, https://www.geeksforgeeks.org/r-language/removing-package-in-r/</p>
+<section id="functions-for-package-management" class="level2">
+<h2 class="anchored" data-anchor-id="functions-for-package-management">Functions for Package Management</h2>
 <ol type="1">
-<li>install packages</li>
-<li>load packages</li>
-<li>unload packages</li>
-<li>update packages</li>
-<li>delete packages</li>
+<li>Install packages: <code>install.pacakges("tidyverse")</code></li>
+<li>Load packages: <code>library(tidyverse)</code></li>
+<li>Unload packages: <code>detach("package: tidyverse", unload = TRUE)</code></li>
+<li>Update packages: <code>update.packages(oldPkgs = "tidyverse")</code></li>
+<li>Delete packages: <code>remove.packages("tidyverse)</code> or <code>unlink()</code></li>
 </ol>
+</section>
+<section id="document-packages" class="level2">
+<h2 class="anchored" data-anchor-id="document-packages">Document Packages</h2>
+<p>Packages should be loaded at the top of the script. There are functions to install or load multiple packages at once * , but loading each package individually means if something is wrong with one package, the error message will be more clear. Moreover, loading each package individually allows you to use the <code>annotater</code> package.</p>
 <p>Use the <a href="https://annotater.liomys.mx/"><code>annotater</code></a> to annotate package load calls with version numbers, description, functions used.</p>
-<p>Use <code>session_info()</code> to see what’s loaded, as well as other information* (should session_info come elsewhere? documentation maybe?)</p>
+<p>Use <code>session_info()</code> to see what’s loaded, as well as other information*</p>
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">References</h3>
+<ul>
+<li><p>https://www.datanovia.com/learn/programming/r-foundations/installing-packages#library-vs-require</p></li>
+<li><p>https://www.geeksforgeeks.org/r-language/removing-package-in-r/</p></li>
+<li><p>we should provide examples of this</p></li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -640,4 +682,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/UtrechtUniversity/workshop-r-booster/edit/main/package-management.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UtrechtUniversity/workshop-r-booster/edit/main/package-management.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>

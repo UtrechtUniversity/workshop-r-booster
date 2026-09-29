@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -41,10 +44,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-87b7f55de2e0c9887283481eb31a794c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-fd0503e23dce65854c81c5baaade3bdf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -189,9 +192,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#environment-alternative-subsection-title-blank-slates" id="toc-environment-alternative-subsection-title-blank-slates" class="nav-link active" data-scroll-target="#environment-alternative-subsection-title-blank-slates">Environment <em>alternative subsection title: “Blank Slates”</em></a></li>
+  <li><a href="#environment" id="toc-environment" class="nav-link active" data-scroll-target="#environment">Environment</a></li>
   <li><a href="#rstudio-projects" id="toc-rstudio-projects" class="nav-link" data-scroll-target="#rstudio-projects">RStudio Projects</a></li>
-  <li><a href="#paths" id="toc-paths" class="nav-link" data-scroll-target="#paths">Paths</a></li>
+  <li><a href="#paths" id="toc-paths" class="nav-link" data-scroll-target="#paths">Paths</a>
+  <ul class="collapse">
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UtrechtUniversity/workshop-r-booster/edit/main/setup-and-environment.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -217,14 +223,39 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><em>alternative chapter names: “Getting Started”, “Setup”</em></p>
-<section id="environment-alternative-subsection-title-blank-slates" class="level2">
-<h2 class="anchored" data-anchor-id="environment-alternative-subsection-title-blank-slates">Environment <em>alternative subsection title: “Blank Slates”</em></h2>
-<p>When you quit R, do not save the workspace to an .Rdata file. When you launch, do not reload the workspace from an .Rdata file. This ensures a blank slate everytime you start a new R session.</p>
-<p>In RStudio, you can set this via Tools &gt; Global Options.</p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>In this chapter, we want to discuss:</p>
+<ul>
+<li><p>setting up a project following best practices - i.e.&nbsp;with a good folder structure and <code>.Rproj</code> files.</p></li>
+<li><p>absolute vs.&nbsp;relative files and how to use the <code>here</code> package to make working with paths easier.</p></li>
+<li><p>adjust RStudio settings to ensure a blank environment on startup.</p></li>
+<li><p>alternative chapter names: “Getting Started”, “Setup”</p></li>
+<li><p>alternative subsection title: “Blank Slates” instead of “Environment”</p></li>
+</ul>
+</div>
+</div>
+</div>
+<section id="environment" class="level2">
+<h2 class="anchored" data-anchor-id="environment">Environment</h2>
+<p><em>Reference</em>: https://rstats.wtf/source-and-blank-slates</p>
+<p>When you quit R, do not save the workspace to an <code>.Rdata</code> file. When you launch R, do not reload the workspace from an <code>.Rdata</code> file. This is an absolute requirement for reproducibility, you have to save the source (files) needed to create all important artefacts of your analyis.</p>
+<p>In RStudio, you can set this via <em>Tools &gt; Global Options</em>.</p>
+<ul>
+<li>Uncheck <em>Restore .RData into workspace at startup</em></li>
+<li>Toggle <em>Save workspace to .RData on exit:</em> to Never</li>
+</ul>
 </section>
 <section id="rstudio-projects" class="level2">
 <h2 class="anchored" data-anchor-id="rstudio-projects">RStudio Projects</h2>
+<p><em>Reference</em>: https://rstats.wtf/projects</p>
+<p>We recommend organizing your projects into self-contained folders.</p>
+<p>However, we don’t want <code>setwd("path/that/only/works/on/my/machine")</code> in our scripts. This will only work for the author of the script, working on that specific computer.</p>
+<p>Instead, you can use RStudio Projects which will automatically set the working directory everytime you launch R using the <code>.Rproj</code> file.</p>
 <ol type="1">
 <li>Creating Projects</li>
 <li>Opening Projects</li>
@@ -232,14 +263,31 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="paths" class="level2">
 <h2 class="anchored" data-anchor-id="paths">Paths</h2>
-<p>We don’t want <code>setwd("path/that/only/works/on/my/machine")</code></p>
-<p>RStudio projects automatically sets the working directory for us.</p>
+<p><em>References</em>: https://rstats.wtf/practice-safe-paths, https://malco.io/articles/2018-11-05-why-should-i-use-the-here-package-when-i-m-already-using-projects</p>
 <ul>
 <li>Explain <em>Absolute Paths</em></li>
 <li>Explain <em>Relative Paths</em></li>
 </ul>
+<p>If you’re using <code>.Rproj</code> files with your projects, then you can use relative paths and you’ll be good to go!</p>
+<p>There may be some exceptions - for example, if you need your paths to work across operating systems* or if you’re working with R Markdown (<code>.Rmd</code>) or Quarto documents (<code>.qmd</code>) located in subdirectories**. In these situations, use the <code>here</code> package to practice safe paths.</p>
+<p>Similar to the <code>setwd()</code> problem, we don’t want <code>penguins &lt;- read_csv("path/that/only/works/on/my/machine/data/penguins.csv")</code> in our scripts.</p>
+<p>The <code>here</code> package would help circumvent this like so: <code>penguins &lt;- read_csv("here/data/penguins.csv")</code></p>
+<p>If you’re using RStudio Projects, the <code>here</code> package will detect the <code>.Rproj</code> file and automatically apply the same the working directory. Otherwise, you can set it manually.</p>
+<ul>
+<li>the slashes in files paths can vary between operating systems and cause errors</li>
+</ul>
+<p>** R Markdown and Quarto documents assume the working directory to be whichever folder the document itself is located in. If the document is in a subdirectory, relative paths from the root of the project might not work. So the <code>here</code> package provides a fail-safe.</p>
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">References</h3>
+<ul>
+<li>https://rstats.wtf/source-and-blank-slates</li>
+<li>https://rstats.wtf/projects</li>
+<li>https://rstats.wtf/practice-safe-paths</li>
+<li>https://tidyverse.org/blog/2017/12/workflow-vs-script/</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
