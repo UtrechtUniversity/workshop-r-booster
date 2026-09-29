@@ -1,15 +1,33 @@
 # Package Management {.unnumbered}
 
-Functions to:
+::: {.callout-tip}
+In this chapter, we want to discuss: 
 
-1. install packages 
-2. load packages
-3. unload packages
-3. update packages
-4. delete packages
+- installing & maintaining packages
+- documenting packages within scripts
+:::
+
+_References_: https://www.datanovia.com/learn/programming/r-foundations/installing-packages#library-vs-require, https://www.geeksforgeeks.org/r-language/removing-package-in-r/
+
+## Functions for Package Management
+
+1. Install packages: `install.pacakges("tidyverse")`
+2. Load packages: `library(tidyverse)`
+3. Unload packages: `detach("package: tidyverse", unload = TRUE)`
+3. Update packages: `update.packages(oldPkgs = "tidyverse")`
+4. Delete packages: `remove.packages("tidyverse)` or `unlink()`
+
+## Document Packages
+
+Packages should be loaded at the top of the script. There are functions to install or load multiple packages at once * , but loading each package individually means if something is wrong with one package, the error message will be more clear. Moreover, loading each package individually allows you to use the `annotater` package.
 
 Use the [`annotater`](https://annotater.liomys.mx/) to annotate package load calls with version numbers, description, functions used.
 
-Use `session_info()` to see what's loaded, as well as other information* (should session_info come elsewhere? documentation maybe?)
+Use `session_info()` to see what's loaded, as well as other information*
 
+### References
 
+- https://www.datanovia.com/learn/programming/r-foundations/installing-packages#library-vs-require 
+- https://www.geeksforgeeks.org/r-language/removing-package-in-r/
+
+* we should provide examples of this

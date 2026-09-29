@@ -1,26 +1,66 @@
 # Project Setup & Environment {.unnumbered}
 
-_alternative chapter names: "Getting Started", "Setup"_
+::: {.callout-tip}
+In this chapter, we want to discuss: 
 
-## Environment _alternative subsection title: "Blank Slates"_
+- setting up a project following best practices - i.e. with a good folder structure and `.Rproj` files. 
+- absolute vs. relative files and how to use the `here` package to make working with paths easier.
+- adjust RStudio settings to ensure a blank environment on startup.
 
-When you quit R, do not save the workspace to an .Rdata file. When you launch, do not reload the workspace from an .Rdata file. This ensures a blank slate everytime you start a new R session.
+- alternative chapter names: "Getting Started", "Setup"
+- alternative subsection title: "Blank Slates" instead of "Environment"
+:::
 
-In RStudio, you can set this via Tools > Global Options.
+## Environment
+
+_Reference_: https://rstats.wtf/source-and-blank-slates
+
+When you quit R, do not save the workspace to an `.Rdata` file. When you launch R, do not reload the workspace from an `.Rdata` file. This is an absolute requirement for reproducibility, you have to save the source (files) needed to create all important artefacts of your analyis.
+
+In RStudio, you can set this via _Tools > Global Options_.
+
+- Uncheck _Restore .RData into workspace at startup_
+- Toggle _Save workspace to .RData on exit:_ to Never
 
 ## RStudio Projects
+
+_Reference_: https://rstats.wtf/projects
+
+We recommend organizing your projects into self-contained folders.
+
+However, we don't want `setwd("path/that/only/works/on/my/machine")` in our scripts. This will only work for the author of the script, working on that specific computer.
+
+Instead, you can use RStudio Projects which will automatically set the working directory everytime you launch R using the `.Rproj` file.
 
 1. Creating Projects
 2. Opening Projects
 
 ## Paths
 
-We don't want `setwd("path/that/only/works/on/my/machine")`
-
-RStudio projects automatically sets the working directory for us.
+_References_: https://rstats.wtf/practice-safe-paths, https://malco.io/articles/2018-11-05-why-should-i-use-the-here-package-when-i-m-already-using-projects 
 
 - Explain _Absolute Paths_
 - Explain _Relative Paths_
 
+If you're using `.Rproj` files with your projects, then you can use relative paths and you'll be good to go!
+
+There may be some exceptions - for example, if you need your paths to work across operating systems* or if you're working with R Markdown (`.Rmd`) or Quarto documents (`.qmd`) located in subdirectories**. In these situations, use the `here` package to practice safe paths.
+
+Similar to the `setwd()` problem, we don't want `penguins <- read_csv("path/that/only/works/on/my/machine/data/penguins.csv")` in our scripts. 
+
+The `here` package would help circumvent this like so: `penguins <- read_csv("here/data/penguins.csv")`
+
+If you're using RStudio Projects, the `here` package will detect the `.Rproj` file and automatically apply the same the working directory. Otherwise, you can set it manually.
+
+* the slashes in files paths can vary between operating systems and cause errors
+
+** R Markdown and Quarto documents assume the working directory to be whichever folder the document itself is located in. If the document is in a subdirectory, relative paths from the root of the project might not work. So the `here` package provides a fail-safe.
+
+### References
+
+- https://rstats.wtf/source-and-blank-slates
+- https://rstats.wtf/projects
+- https://rstats.wtf/practice-safe-paths
+- https://tidyverse.org/blog/2017/12/workflow-vs-script/
 
 
