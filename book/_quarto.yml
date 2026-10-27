@@ -9,15 +9,25 @@ book:
   search: true
   chapters:
     - index.qmd
-    - setup-and-environment.qmd
-    - reproducibility.qmd
-    - package-management.qmd
-    - configuration.qmd
-    - api.qmd
-    - data-cleaning.qmd
-    - automation.qmd
-    - documentation.qmd
-    - help.qmd
+    - part: "Best Practices" 
+      chapters:
+        - setup-and-environment.qmd
+        - package-management.qmd
+        - reproducibility.qmd
+        - configuration.qmd
+        - documentation.qmd
+        - ai.qmd
+        - help.qmd
+    - part: "Data Pipeline"
+      chapters:
+        - api.qmd
+        - data-validation.qmd
+        - column-operations.qmd
+        - de-identification.qmd
+        - row-operations.qmd
+        - duplicates.qmd
+        - statistics.qmd
+        - automation.qmd
     - references.qmd
 
   repo-url: https://github.com/UtrechtUniversity/workshop-r-booster

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Pipeline – R Booster</title>
+<title>Column Operations – R Booster</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./automation.html" rel="next">
-<link href="./api.html" rel="prev">
+<link href="./de-identification.html" rel="next">
+<link href="./data-validation.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data-cleaning.html">Data Pipeline</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./api.html">Data Pipeline</a></li><li class="breadcrumb-item"><a href="./column-operations.html">Column Operations</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,60 +115,118 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Best Practices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./setup-and-environment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project Setup &amp; Environment</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reproducibility.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reproducibility</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./package-management.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Package Management</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reproducibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reproducibility</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./configuration.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Configuration</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./api.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Working with APIs</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./data-cleaning.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Data Pipeline</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./automation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Automation</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./documentation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Documentation</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ai.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./help.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Help</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data Pipeline</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./api.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Working with APIs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-validation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Validation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./column-operations.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Column Operations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./de-identification.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">De-Identification</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./row-operations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Row Operations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./duplicates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Duplicates</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./automation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Automation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
@@ -186,9 +244,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./api.html">Data Pipeline</a></li><li class="breadcrumb-item"><a href="./column-operations.html">Column Operations</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Data Pipeline</h1>
+<h1 class="title">Column Operations</h1>
 </div>
 
 
@@ -205,38 +263,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<ul>
-<li>Explore Data</li>
-<li>Validate Data</li>
-<li>Drop Columns</li>
-<li>Split and/or Merge Columns</li>
-<li>Rename Columns</li>
-<li>Adjust Variable Types</li>
-<li>Filter outliers and/or missing data</li>
-<li>De-identify data</li>
-<li>Standardize values (dates, country, units)</li>
-<li>Recoding</li>
-<li>Construct new variables</li>
-</ul>
-<p>From our brainstorm notes:</p>
-<ul>
-<li>Rename Columns</li>
-<li>Adjust number of cases</li>
-<li>De-identify data</li>
-<li>Drop any irrelevant columns</li>
-<li>Split columns as needed</li>
-<li>Rename variables</li>
-<li>Transform/normalize variables</li>
-<li>Standardize variables</li>
-<li>Update any variable types as needed</li>
-<li>Recode variables</li>
-<li>Construct any necessary variables</li>
-<li>Add missing values as needed</li>
-<li>Add metadata as needed</li>
-<li>Validate data</li>
-<li>Merge and/or append data as needed</li>
-<li>Transform data as needed</li>
-</ul>
 
 
 
@@ -660,13 +686,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./api.html" class="pagination-link" aria-label="Working with APIs">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Working with APIs</span>
+      <a href="./data-validation.html" class="pagination-link" aria-label="Data Validation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data Validation</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./automation.html" class="pagination-link" aria-label="Automation">
-        <span class="nav-page-text">Automation</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./de-identification.html" class="pagination-link" aria-label="De-Identification">
+        <span class="nav-page-text">De-Identification</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -675,4 +701,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/UtrechtUniversity/workshop-r-booster/edit/main/data-cleaning.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/UtrechtUniversity/workshop-r-booster/edit/main/column-operations.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>

@@ -2,7 +2,7 @@
 
 ## Configuration Files
 
-Set up configuration files to carry out certain operations like dropping columns, renaming columns, recoding values - as opposed to hard-coding things in the script.
+Set up configuration files to carry out certain operations like dropping columns, renaming columns, recoding values - as opposed to hard-coding things in the script.  
 
 ## Working with Smaller/Modular Files
 
